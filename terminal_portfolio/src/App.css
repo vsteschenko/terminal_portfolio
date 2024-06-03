@@ -8,3 +8,11 @@ div {
   background-color: black;
   color: white;
 }
+.Skills{
+  display: flex;
+  flex-direction: row;
+}
+.Skills div {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}

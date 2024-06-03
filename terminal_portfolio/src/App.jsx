@@ -5,7 +5,9 @@ function App() {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
 
-  const myProjects = ['1', '2', '3', '4'];
+  const myProjects = ['portfolio.md', 'skills.json'];
+  const listOfProjects = ['www.chew-champion.com', 'www.chat.com', 'www.game.com', 'www.weather.com'];
+  const listOfSkills = ["Languages: JS, Python", "Backend: Express, Django", "Frontend: React", "Database: MariaDB, Postgresql"]
 
   const handleKeyDown = (e) => {
     if(e.keyCode == 13) {
@@ -17,6 +19,10 @@ function App() {
     if(input.trim() !== '') {
       if (input.trim() === 'ls') {
         setMessages(prevMessages => [...prevMessages, myProjects]);
+      } else if(input.trim() === 'cat portfolio.md') {
+        setMessages(prevMessages => [...prevMessages, listOfProjects])
+      } else if(input.trim() === 'cat skills.json') {
+        setMessages(prevMessages => [...prevMessages, listOfSkills])
       } else {
         setMessages(prevMessages => [...prevMessages, {text: `guest@vsteschenko:~ %  command doesn't exist`}]);
       }
@@ -33,11 +39,10 @@ function App() {
             return (
               <>
                 <p>guest@vsteschenko:~ %  ls</p>
-                <ul key={index}>
-                  {message.map((project, ind) => <li key={ind}>{project}</li>)}
-                </ul>
+                <div key={index} className="Skills">
+                  {message.map((project, ind) => <div key={ind}>{project}</div>)}
+                </div>
               </>
-
             );
           } else {
             return <p key={index}>{message.text}</p>

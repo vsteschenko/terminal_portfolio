@@ -7,7 +7,13 @@ function App() {
 
   const myProjects = ['portfolio.md', 'skills.json'];
   const listOfProjects = ['www.chew-champion.com', 'www.chat.com', 'www.game.com', 'www.weather.com'];
-  const listOfSkills = ["Languages: JS, Python", "Backend: Express, Django", "Frontend: React", "Database: MariaDB, Postgresql"]
+  const listOfSkills = ["Languages: JS, Python", "Backend: Express, Django", "Frontend: React", "Database: MariaDB, Postgresql"];
+  const help = [
+    "ls: list all files.",
+    "cat portfolio.md: display the list of projects.",
+    "cat skills.json: display the list of skills.",
+    "help: show this help message."
+  ];
 
   const handleKeyDown = (e) => {
     if(e.keyCode == 13) {
@@ -23,6 +29,8 @@ function App() {
         setMessages(prevMessages => [...prevMessages, listOfProjects])
       } else if(input.trim() === 'cat skills.json') {
         setMessages(prevMessages => [...prevMessages, listOfSkills])
+      } else if(input.trim() === 'help') {
+        setMessages(prevMessages => [...prevMessages, help])
       } else {
         setMessages(prevMessages => [...prevMessages, {text: `guest@vsteschenko:~ %  command doesn't exist`}]);
       }

@@ -7,7 +7,9 @@
   overflow-y: scroll;
   cursor: text;
 }
-
+.About {
+  font-family: "Orbitron", sans-serif;
+}
 .historyItem {
   margin-bottom: 5px;
   text-align: left;

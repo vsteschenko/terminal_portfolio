@@ -2,11 +2,11 @@ import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 
 const skills = [
-  { languages: ["JavaScript", "Python"] },
-  { frontend: "React" },
-  { backend: ["Django", "Express"] },
-  { databases: ["Postgres", "MongoDB"]},
-  { deploy: ["Heroku", "Google Cloud"]},
+  { languages: ["JavaScript", "Python", "Kotlin"] },
+  { frontend: ["React", "Angular", "Astro"]},
+  { backend: ["Django", "Express", "Amplify"] },
+  { databases: ["Postgres", "MongoDB", "Bigquery"]},
+  { deploy: ["Heroku", "Google Cloud", "AWS", "Cloudflare"]},
 ];
 
 const portfolio = ['https://chew-champion.netlify.app/', 'https://slava-lokkeroom.netlify.app/register - under maintenance'];
@@ -105,8 +105,43 @@ const Terminal = () => {
         <p>BeCode is an amazing bootcamp for developers. It's a community of learners and developers thinking alike, building cool websites, and having fun. The core of BeCode is active learning, which is essentially learning by doing. I was gradually introduced to Git, variables, functions, OOP, then SQL, HTML and CSS, Express, React, Django, and mobile development.</p>
         <p>This bootcamp has prepared me well for the next step in my career, and I am proud to be part of this community.</p>
         
-        <h3>Looking Forward</h3>
-        <p>Currently, I am looking for an internship where I can apply my skills and contribute to meaningful projects.</p>
+        <h3 className="About">Internship at AVS IT</h3>
+        <p>
+          During my internship at AVS IT, I was warmly welcomed by Jeremie, who guided me through the 
+          onboarding process. My journey began with learning the Astro framework, which I quickly grew to love. 
+          My first task was to develop a simple webpage, followed by a larger task to refactor the company's 
+          website. Over the course of a week, I streamlined the code, removing unnecessary modules and 
+          implementing essential features. The final result can be seen at <a href="https://avsit.io" target="_blank" className="Name">avsit.io</a>. Deploying this site marked the successful completion 
+          of my first major task!
+        </p>
+        <p>
+          Next, I transitioned into working with Angular, a framework I had heard some developers describe as complex and heavy. 
+          However, I found many similarities between Angular and Astro, making the transition smoother than expected. 
+          One of my tasks involved developing a charting feature using PrimeNG charts. The workflow included creating 
+          an API on Amplify, which triggered a Lambda function to fetch data from BigQuery. This experience gave me 
+          valuable insights that later helped when integrating Directus.
+        </p>
+        <p>
+          Afterward, I had the opportunity to refactor a client’s website—an exciting project that I successfully 
+          completed within a week.
+        </p>
+        <p>
+          Subsequently, I was assigned to work on a project involving a Content Management System (CMS), a concept that
+           was entirely new to me at the time. The goal was to implement a mostly static website with a hybrid adapter 
+           that would later be deployed on Cloudflare. One of the key challenges was separating server-side logic from 
+           client-side functionality while ensuring that Directus communicated correctly with the client-side, 
+           especially in the deployed version. I was proud to integrate this into the project while maintaining the 
+           hybrid setup.
+        </p>
+        <p>
+          Throughout my internship, I gained valuable experience with AWS, Cloudflare, Amplify, MageAI, Docker, and Directus. 
+          The integration of Directus allowed the website's owner to easily manage content without needing a developer, further 
+          expanding my skill set in modern web development technologies.
+        </p>
+
+
+        <h3 className="About">Looking Forward</h3>
+        <p>Currently, I am looking for a job where I can apply my skills and contribute to meaningful projects.</p>
       {showHelpMessage && <div className="helpMessage">{typedMessage}</div>}
       {history.map((item, index) => (
         <div key={index} className="historyItem">{item}</div>

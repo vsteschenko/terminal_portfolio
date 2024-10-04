@@ -111,7 +111,7 @@ const Terminal = () => {
           onboarding process. My journey began with learning the Astro framework, which I quickly grew to love. 
           My first task was to develop a simple webpage, followed by a larger task to refactor the company's 
           website. Over the course of a week, I streamlined the code, removing unnecessary modules and 
-          implementing essential features. The final result can be seen at <a href="https://avsit.io" target="_blank" className="Name">avsit.io</a>. Deploying this site marked the successful completion 
+          implementing essential features. The final result can be seen at <a href="https://avsit.io" target="_blank" rel="noreferrer" className="Name">avsit.io</a>. Deploying this site marked the successful completion 
           of my first major task!
         </p>
         <p>

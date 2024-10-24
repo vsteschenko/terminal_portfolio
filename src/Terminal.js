@@ -4,7 +4,7 @@ import './App.css';
 const skills = [
   { languages: ["JavaScript", "Python", "Kotlin"] },
   { frontend: ["React", "Angular", "Astro"]},
-  { backend: ["Django", "Express", "Amplify"] },
+  { backend: ["Django", "Express", "Ktor", "Amplify"] },
   { databases: ["Postgres", "MongoDB", "Bigquery"]},
   { deploy: ["Heroku", "Google Cloud", "AWS", "Cloudflare"]},
 ];
@@ -59,7 +59,9 @@ const Terminal = () => {
       const newHistory = [...history, `${user}@vsteschenko:~$ ${input}`];
       const [command, ...args] = input.split(' ');
 
-      if (commands[command]) {
+      if(input.trim() === '') {
+        setHistory([...newHistory, ''])
+      } else if(commands[command]) {
         if (command === 'clear') {
           setHistory([]);
         } else if (command === 'switch user') {
@@ -143,10 +145,12 @@ const Terminal = () => {
 
         <h3 className="About">Looking Forward</h3>
         <p>Currently, I am looking for a job where I can apply my skills and contribute to meaningful projects.</p>
+        <h3 className="About">Terminal</h3>
       {showHelpMessage && <div className="helpMessage">{typedMessage}</div>}
       {history.map((item, index) => (
         <div key={index} className="historyItem">{item}</div>
       ))}
+      
       <div className="inputLine">
         <span>{user}@<span className="Name">vsteschenko</span>:~$ </span>
         <input

@@ -6,6 +6,7 @@
   height: 100vh;
   overflow-y: scroll;
   cursor: text;
+  padding-bottom: 30px;
 }
 .About {
   font-family: "Orbitron", sans-serif;

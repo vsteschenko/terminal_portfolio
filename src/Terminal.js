@@ -24,6 +24,7 @@ const Terminal = () => {
   const [history, setHistory] = useState([]);
   const [input, setInput] = useState('');
   const [user, setUser] = useState('guest');
+  // eslint-disable-next-line 
   const [showHelpMessage, setShowHelpMessage] = useState(true);// eslint-disable-next-line no-unused-vars
   const [typedMessage, setTypedMessage] = useState('');
   const inputRef = useRef(null);

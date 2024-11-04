@@ -80,7 +80,7 @@ const Terminal = () => {
             <div key="portfolio">
               {portfolioLinks.map((link, index) => (
                 <div key={index}>
-                  <a href={link} target="_blank" className='Name'>
+                  <a href={link} target="_blank" className='Name' rel="noreferrer">
                     {link}
                   </a>
                 </div>

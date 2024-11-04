@@ -9,7 +9,7 @@ const skills = [
   { deploy: ["Heroku", "Google Cloud", "AWS", "Cloudflare"]},
 ];
 
-const portfolio = ['https://chew-champion.netlify.app/', 'https://slava-lokkeroom.netlify.app/register - under maintenance'];
+const portfolio = ['https://github.com/je-ol/Chew-champion/tree/main/back-end', 'https://github.com/vsteschenko/chat_app/blob/main/server.js', 'https://github.com/vsteschenko/TheNote/tree/main/back-end', 'https://github.com/vsteschenko/ledger_app'];
 
 const files = {
   "skills.json": JSON.stringify(skills, null, 2),
@@ -73,7 +73,23 @@ const Terminal = () => {
           setHistory([...newHistory, commands[command]]);
         }
       } else if (command === 'cat' && args[0] && files[args[0]]) {
-        setHistory([...newHistory, files[args[0]]]);
+        if (args[0] === 'portfolio.md') {
+          const portfolioLinks = JSON.parse(files["portfolio.md"]);
+          setHistory([
+            ...newHistory,
+            <div key="portfolio">
+              {portfolioLinks.map((link, index) => (
+                <div key={index}>
+                  <a href={link} target="_blank" className='Name'>
+                    {link}
+                  </a>
+                </div>
+              ))}
+            </div>
+          ]);
+        } else {
+          setHistory([...newHistory, files[args[0]]]);
+        }
       } else if (command === 'su' && args[0]) {
         setUser(args[0]);
         setHistory([...newHistory, `Switching user to ${args[0]}. Current user: ${args[0]}`]);
@@ -110,23 +126,18 @@ const Terminal = () => {
         
         <h3 className="About">Internship at AVS IT</h3>
         <p>
-          During my internship at AVS IT, I was warmly welcomed by Jeremie, who guided me through the 
-          onboarding process. My journey began with learning the Astro framework, which I quickly grew to love. 
+          After onboarding I started learning Astro framework.
           My first task was to develop a simple webpage, followed by a larger task to refactor the company's 
           website. Over the course of a week, I streamlined the code, removing unnecessary modules and 
-          implementing essential features. The final result can be seen at <a href="https://avsit.io" target="_blank" rel="noreferrer" className="Name">avsit.io</a>. Deploying this site marked the successful completion 
-          of my first major task!
+          implementing essential features.
         </p>
         <p>
-          Next, I transitioned into working with Angular, a framework I had heard some developers describe as complex and heavy. 
-          However, I found many similarities between Angular and Astro, making the transition smoother than expected. 
+          Next, I transitioned into working with Angular. I found many similarities between Angular and Astro which made learning Angular easier. 
           One of my tasks involved developing a charting feature using PrimeNG charts. The workflow included creating 
-          an API on Amplify, which triggered a Lambda function to fetch data from BigQuery. This experience gave me 
-          valuable insights that later helped when integrating Directus.
+          an API on Amplify, which triggered a Lambda function on AWS to fetch data from BigQuery.
         </p>
         <p>
-          Afterward, I had the opportunity to refactor a client’s website—an exciting project that I successfully 
-          completed within a week.
+          Afterward, I quickly made a website with Astro for a client and returned to working with Angular.
         </p>
         <p>
           Subsequently, I was assigned to work on a project involving a Content Management System (CMS), a concept that
@@ -137,14 +148,13 @@ const Terminal = () => {
            hybrid setup.
         </p>
         <p>
-          Throughout my internship, I gained valuable experience with AWS, Cloudflare, Amplify, MageAI, Docker, and Directus. 
-          The integration of Directus allowed the website's owner to easily manage content without needing a developer, further 
-          expanding my skill set in modern web development technologies.
+          Throughout my internship, I gained valuable experience with Angular, Astro, AWS, Cloudflare, Amplify, MageAI, Docker, and Directus. 
+          The integration of Directus allowed the website's owner to easily manage content without a need for a developer.
         </p>
 
 
         <h3 className="About">Looking Forward</h3>
-        <p>Currently, I am looking for a job where I can apply my skills and contribute to meaningful projects.</p>
+        <p>Currently, I am looking for a job where I can apply my skills and grow professionally.</p>
         <h3 className="About">Terminal</h3>
       {showHelpMessage && <div className="helpMessage">{typedMessage}</div>}
       {history.map((item, index) => (

@@ -126,33 +126,9 @@ const Terminal = () => {
         
         <h3 className="About">Internship at AVS IT</h3>
         <p>
-          After onboarding I started learning Astro framework.
-          My first task was to develop a simple webpage, followed by a larger task to refactor the company's 
-          website. Over the course of a week, I streamlined the code, removing unnecessary modules and 
-          implementing essential features.
+          Main stack Astro/Cloudflare and Angular/AWS. As part of my internship built several websites for the company. Worked with Bigquery, Lambdas, CMS and Docker.
         </p>
-        <p>
-          Next, I transitioned into working with Angular. I found many similarities between Angular and Astro which made learning Angular easier. 
-          One of my tasks involved developing a charting feature using PrimeNG charts. The workflow included creating 
-          an API on Amplify, which triggered a Lambda function on AWS to fetch data from BigQuery.
-        </p>
-        <p>
-          Afterward, I quickly made a website with Astro for a client and returned to working with Angular.
-        </p>
-        <p>
-          Subsequently, I was assigned to work on a project involving a Content Management System (CMS), a concept that
-           was entirely new to me at the time. The goal was to implement a mostly static website with a hybrid adapter 
-           that would later be deployed on Cloudflare. One of the key challenges was separating server-side logic from 
-           client-side functionality while ensuring that Directus communicated correctly with the client-side, 
-           especially in the deployed version. I was proud to integrate this into the project while maintaining the 
-           hybrid setup.
-        </p>
-        <p>
-          Throughout my internship, I gained valuable experience with Angular, Astro, AWS, Cloudflare, Amplify, MageAI, Docker, and Directus. 
-          The integration of Directus allowed the website's owner to easily manage content without a need for a developer.
-        </p>
-
-
+        
         <h3 className="About">Looking Forward</h3>
         <p>Currently, I am looking for a job where I can apply my skills and grow professionally.</p>
         <h3 className="About">Terminal</h3>
